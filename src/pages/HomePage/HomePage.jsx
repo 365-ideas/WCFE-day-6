@@ -6,7 +6,13 @@ import Image from "next/image";
 import { Logo } from "@/components/Logo/Logo";
 import { motion, useAnimation } from "framer-motion";
 import { LoaderContext } from "@/providers/LoaderProvider/LoaderProvider";
-import { anim, BlurPresence, LoaderAnim, presenceAnim, TitlePresence } from "@/helpers/anim";
+import {
+  anim,
+  BlurPresence,
+  LoaderAnim,
+  presenceAnim,
+  TitlePresence,
+} from "@/helpers/anim";
 import { ease } from "@/helpers/ease";
 import classNames from "classnames";
 
@@ -15,6 +21,7 @@ export default function HomePage() {
 
   const imageAnim = useAnimation();
   const heroAnim = useAnimation();
+  const crossAnim = useAnimation();
 
   const [isLogoChange, setIsLogoChange] = useState(false);
 
@@ -86,13 +93,62 @@ export default function HomePage() {
         />
       )}
       <motion.div animate={imageAnim} className="image-wrapper">
-        <Image src="/images/hero.jpg" alt="home" className="image" fill />
+        <Image src="/images/hero.webp" alt="home" className="image" fill />
       </motion.div>
-      <motion.div
-        // {...presenceAnim(LoaderAnim.hero, loaderFinished)}
-        animate={heroAnim}
-        className="content-wrapper"
+
+      <svg
+        width="1441"
+        height="1237"
+        className={classNames("home__elipse", {
+          "home__elipse--animate": loaderFinished,
+        })}
+        viewBox="0 0 1441 1237"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
+        <motion.g animate={crossAnim}>
+          <line
+            x1="567"
+            y1="358.5"
+            x2="668"
+            y2="358.5"
+            stroke="white"
+            stroke-width="2"
+          />
+          <line
+            x1="618.5"
+            y1="309"
+            x2="618.5"
+            y2="410"
+            stroke="white"
+            stroke-width="2"
+          />
+        </motion.g>
+        <ellipse
+          opacity="0.5"
+          cx="720.252"
+          cy="618.373"
+          rx="689"
+          ry="272"
+          transform="rotate(-35.0519 720.252 618.373)"
+          stroke="#E5D11D"
+          stroke-width="2"
+        />
+        <defs>
+          <clipPath id="clip0_975_90">
+            <rect
+              width="101"
+              height="101"
+              fill="white"
+              transform="translate(567 309)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+      <Image src="/images/blick.png" width={1600} height={1300} alt="" className={classNames("home__blick", {
+        "home__blick--animate": loaderFinished,
+      })}/>
+      <motion.div animate={heroAnim} className="content-wrapper">
         <p className="side-text side-text--left">
           COVID‑19 transmits when people breathe air contaminated by
         </p>
@@ -102,15 +158,27 @@ export default function HomePage() {
         <div className="center">
           <div className="title">
             <h1 className="title__left">
-              <motion.p {...presenceAnim(TitlePresence, loaderFinished)} custom={{ id: 0, duration: 1 }}>
+              <motion.p
+                {...presenceAnim(TitlePresence, loaderFinished)}
+                custom={{ id: 0, duration: 1 }}
+              >
                 Comme
               </motion.p>
-              <motion.p {...presenceAnim(TitlePresence, loaderFinished)} custom={{ id: 1, duration: 1 }}>
+              <motion.p
+                {...presenceAnim(TitlePresence, loaderFinished)}
+                custom={{ id: 1, duration: 1 }}
+              >
                 rcial
               </motion.p>
             </h1>
             <div className="title__right">
-              <motion.p {...presenceAnim(TitlePresence, loaderFinished)} custom={{ id: 1.5, duration: 1 }} className="luxurios-font">TimesNew</motion.p>
+              <motion.p
+                {...presenceAnim(TitlePresence, loaderFinished)}
+                custom={{ id: 1.5, duration: 1 }}
+                className="luxurios-font"
+              >
+                TimesNew
+              </motion.p>
 
               <svg
                 width="866"
@@ -155,19 +223,37 @@ export default function HomePage() {
             </div>
           </div>
           <div className="bottom-text">
-            <motion.p {...presenceAnim(BlurPresence, loaderFinished)} custom={{ id: 0, duration: 1 }}>
+            <motion.p
+              {...presenceAnim(BlurPresence, loaderFinished)}
+              custom={{ id: 0, duration: 1 }}
+            >
               The origins of <span className="bold">typography</span> date back
             </motion.p>
-            <motion.p {...presenceAnim(BlurPresence, loaderFinished)} custom={{ id: 0, duration: 1 }}>
+            <motion.p
+              {...presenceAnim(BlurPresence, loaderFinished)}
+              custom={{ id: 0, duration: 1 }}
+            >
               appealing, legible
               <span className="bold"> and easy</span>
             </motion.p>
-            <motion.p {...presenceAnim(BlurPresence, loaderFinished)} custom={{ id: 0, duration: 1 }}>
+            <motion.p
+              {...presenceAnim(BlurPresence, loaderFinished)}
+              custom={{ id: 0, duration: 1 }}
+            >
               Typography is the
               <span className="bold"> art arranging</span>
             </motion.p>
-            <motion.p {...presenceAnim(BlurPresence, loaderFinished)} custom={{ id: 0, duration: 1 }} className="bold">type</motion.p>
-            <motion.p {...presenceAnim(BlurPresence, loaderFinished)} custom={{ id: 0, duration: 1 }}>
+            <motion.p
+              {...presenceAnim(BlurPresence, loaderFinished)}
+              custom={{ id: 0, duration: 1 }}
+              className="bold"
+            >
+              type
+            </motion.p>
+            <motion.p
+              {...presenceAnim(BlurPresence, loaderFinished)}
+              custom={{ id: 0, duration: 1 }}
+            >
               They framed their <span className="bold">business</span>
             </motion.p>
           </div>

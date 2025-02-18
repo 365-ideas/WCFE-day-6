@@ -20,7 +20,7 @@
 
     opacity: 0;
   }
-  
+
   .content-wrapper {
     position: absolute;
     bottom: 0;
@@ -40,7 +40,7 @@
     // left: 50%;
     z-index: 2;
     mix-blend-mode: difference;
-    
+
     &--loader {
       top: 50%;
       scale: 4;
@@ -109,12 +109,12 @@
             path {
               transform-origin: center;
               animation: 1s 0.5s $ease-in-out-circ forwards;
-  
+
               &:nth-of-type(1) {
                 rotate: -4.4deg;
                 animation-name: linePresence1;
               }
-  
+
               &:nth-of-type(3) {
                 rotate: 4.4deg;
                 animation-name: linePresence2;
@@ -122,7 +122,6 @@
               }
             }
           }
-
         }
       }
     }
@@ -159,6 +158,49 @@
         margin-left: auto;
         text-align: end;
       }
+    }
+  }
+
+  &__elipse {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    width: VW(1274);
+    height: VW(1011);
+
+    opacity: 0;
+    scale: 1.2;
+    transition: all 1s $ease-in-out-circ;
+
+    g {
+      transform-origin: 720px 620px;
+      transform: rotate(-21deg);
+      opacity: 0;
+      transition: all 1s $ease-in-out-circ;
+    }
+
+    &--animate {
+      opacity: 1;
+      scale: 1;
+      g {
+        opacity: 1;
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &__blick {
+    position: absolute;
+    top: -7%;
+    right: -7%;
+    width: VW(1600);
+    height: VW(1300);
+
+    opacity: 0;
+    transition: opacity 1s 0.5s ease;
+
+    &--animate {
+      opacity: 1;
     }
   }
 }
