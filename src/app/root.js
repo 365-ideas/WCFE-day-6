@@ -10,9 +10,9 @@ export const Root = ({ children }) => {
 
   return (
     <>
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         {!loaderFinished && <Loader />}
-      </AnimatePresence>
+      </AnimatePresence> */}
       <AnimatePresence mode="wait">
         {children}
       </AnimatePresence>

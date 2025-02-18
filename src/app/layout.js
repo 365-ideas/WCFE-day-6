@@ -26,20 +26,31 @@ const inter = localFont({
   variable: "--font-inter",
 });
 
+const luxuriosScript = localFont({
+  src: [
+    {
+      path: "./fonts/LuxuriousScript-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-luxurios",
+});
+
 export const metadata = {
   title: "We're Creating For Emotions",
-  description: "Day # | We're Creating For Emotions",
+  description: "Day 6 | We're Creating For Emotions",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html className="html" lang="en">
-      <body className={`body ${inter.variable}`}>
+      <body
+        className={`body ${inter.variable} ${luxuriosScript.variable}`}
+      >
         <LoaderProvider>
           <ResponceBlocker />
-          <Root>
-            {children}
-          </Root>
+          <Root>{children}</Root>
         </LoaderProvider>
       </body>
     </html>

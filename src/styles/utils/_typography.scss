@@ -2,21 +2,31 @@
 
 %h1 {
   font-family: var(--font-inter), sans-serif;
-  font-size: VW(60);
+  font-size: VW(115);
   font-style: normal;
   font-weight: bold;
-  line-height: 142%;
+  line-height: 80%;
   text-transform: uppercase;
-  letter-spacing: normal;
+  letter-spacing: -0.4vw;
 }
+
+.luxurios-font {
+  font-family: var(--font-luxurios), sans-serif;
+  font-size: VW(300);
+  line-height: 70%;
+  letter-spacing: -0.4vw;
+  text-transform: initial;
+}
+
 
 %body-text {
   font-family: var(--font-inter), sans-serif;
   font-size: VW(20);
   font-style: normal;
   font-weight: 400;
-  line-height: 140%;
+  line-height: 100%;
   letter-spacing: -0.06vw;
+  text-transform: uppercase;
 }
 
 %link {
